@@ -1,0 +1,34 @@
+1 - create_variables "total_starting_amount", "received_amount", "remaining_amount"
+
+2- ask the user if this is newday
+    * if yes:
+        get the total_starting_money from the user
+        set that amount to remaining_amount
+        create csv file and save total_starting_money and remaining_amount
+    * else:
+        get total_starting_money from csv  file that created last time
+        get remaining_amount from csv file that created last time
+        set each of them to its
+3- 
+3- Waiting the user to choice the operator
+* Received:
+    open new window the contain this information:
+        * reasen [send to ccp , pay factures, ] => Boxselect
+        * amount in Da => entry
+        * button 'ok' => button
+        * button 'confirm' that 'That you received the money from the client' => button
+            if : this button clicked on yes the button 'ok' enabled
+            else : 'ok' disabled
+        add the money to received_money and close this window
+
+* Delivered
+    open new window the contain this information:
+    * input field to enter the amount
+    * button 'ok'
+    if the button clicked:
+        popup a textbox contains the amount
+        if 'ok_in_textbox' is clicked:
+            subtract from the total_starting_money that amount
+            save the result in variable money_left
+        
+    
