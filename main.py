@@ -5,7 +5,13 @@ from tkinter import *
 from tkinter import messagebox as letter
 from tkinter import font
 from tools import *
-from tkinter import ttk
+
+
+
+# -----------------------------------------------------------------------
+#------------------------------ VARS -------------------------------
+# -----------------------------------------------------------------------
+total_starting_amount = 0
 
 # -----------------------------------------------------------------------
 #------------------------------  Functionalty ---------------------------
@@ -22,7 +28,12 @@ def get_amount():
     money.grid(row=1,column=1,columnspan=2,pady=50,padx=30)
     lb = Label(amount_window,text='دج',bg=BG_C,fg=title_font_color,font=subtitle_font)
     lb.grid(row=1,column=0,pady=50,padx=30)
-    confirm_btn = Button(amount_window,text='واصل',width=28,pady=30,bg=success_color,font=btn_font,state=DISABLED)
+    def done():
+        global total_starting_amount
+        total_starting_amount = int(money.get())
+        print(f'The total amount right now is {total_starting_amount}')
+        amount_window.destroy()
+    confirm_btn = Button(amount_window,text='واصل',width=28,pady=30,bg=success_color,font=btn_font,state=DISABLED,command=done)
     confirm_btn.grid(row=2,column=1)
     def confirm_amount():
         if len(money.get())>0:
